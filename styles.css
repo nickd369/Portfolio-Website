@@ -225,15 +225,22 @@ body.dark-mode .contact-link {
     .navbar ul li {
         flex: 1; /* Make list items take equal width */
         margin: 5px 0; /* Add vertical margin */
-        width: 100%; /* Ensure list items take full width */
+        width: auto; /* Ensure list items take full width */
     }
 
     .navbar ul li a {
+        padding: 5px 10px; /* Reduce padding */
+        font-size: 0.5em; /* Reduce font size */
         width: 100%; /* Ensure anchor tags take full width */
-        padding: 10px 0; /* Adjust padding */
     }
 
     .container ul {
         padding-left: 20px; /* Increase space from the left for the list items */
+    }
+
+    .contact-info ul,
+    .contact-info li,
+    .contact-info p {
+        font-size: 1.0em; /* Reduce font size for the contact info list and text */
     }
 }
