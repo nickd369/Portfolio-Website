@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+:root {
+    --light-text-color: #000;
+    --dark-text-color: #eee;
+    --light-bg-color: rgba(106, 17, 203, 0.9), rgba(37, 117, 252, 0.9);
+    --dark-bg-color: #333;
+}
+
+body {
+    background-image: var(--gradient); /* Using a CSS variable for gradient */
+    height: 100vh;
+    margin: 0; /* Remove default margin */
+    font-family: 'Raleway', sans-serif;
+    color: var(--light-text-color); /* Default text color for light mode */
+    font-weight: bold; /* Default text weight for light mode */
+}
+
+body.dark-mode {
+    color: var(--dark-text-color); /* Text color for dark mode */
+    background-color: var(--dark-bg-color); /* Ensure background color is set for dark mode */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px; /* Add padding to the container */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: auto; /* Center the container */
+}
+
+.toggle {
+    width: 150px;
+    height: 30px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    float: right; /* Float to the right */
+    margin-left: auto; /* Ensure it stays on the right */
+}
+
+.toggle:hover {
+    background-color: white;
+    color: #97caec;
+    font-weight: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: var(--light-text-color); /* Default text color for light mode */
+    font-family: 'Raleway', sans-serif;
+    margin: 50px 0;
+    font-size: 3rem; /* Increase font size */
+    font-weight: bold; /* Default text weight for light mode */
+}
+
+body.dark-mode h1 {
+    color: var(--dark-text-color); /* Text color for dark mode */
+}
+
+p, h2, ul {
+    max-width: 800px; /* Set a maximum width */
+    font-size: 1.5rem; /* Increase font size */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 20px; /* Add space below paragraphs */
+    color: var(--light-text-color); /* Default text color for light mode */
+}
+
+body.dark-mode p, body.dark-mode h2, body.dark-mode ul {
+    color: var(--dark-text-color); /* Text color for dark mode */
+}
+
+.navbar {
+    background: linear-gradient(to right, var(--light-bg-color));
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; /* Center items vertically */
+}
+
+body.dark-mode .navbar {
+    background: var(--dark-bg-color);
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Take up remaining space */
+}
+
+.navbar ul li {
+    margin: 5px;
+}
+
+.navbar ul li a {
+    display: block;
+    text-align: center;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--light-text-color); /* Default text color */
+    border: 2px solid transparent; /* Add transparent border */
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+body.dark-mode .navbar ul li a {
+    color: var(--dark-text-color);
+}
+
+.navbar ul li a:hover {
+    background-color: #ddd; /* Background color for navbar links on hover */
+    color: black;
+    border-radius: 5px; /* Ensure rounded corners on hover */
+}
+
+/* Ensure the main content takes up more space */
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Adjust this value to fill more or less screen height */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style for the contact-info section */
+.contact-info {
+    max-width: 1000px; /* Increase the max-width for a larger section */
+    width: 100%;
+    padding: 60px; /* Increase padding for more space inside the section */
+    text-align: center; /* Center align text */
+    font-size: 1.2em; /* Increase font size for better readability */
+    color: var(--light-text-color); /* Darker color for better contrast */
+    font-weight: bold; /* Make text bold in light mode */
+    margin: 0 auto; /* Center the contact info section */
+}
+
+.contact-info h1 {
+    font-size: 2.5em; /* Increase font size for the heading */
+    margin-bottom: 20px; /* Add some space below the heading */
+    color: var(--light-text-color); /* Darker color for better contrast */
+    text-align: center; /* Center align the heading */
+}
+
+body.dark-mode .contact-info h1,
+body.dark-mode .contact-info {
+    color: var(--dark-text-color); /* Text color for dark mode */
+}
+
+.contact-info p,
+.contact-info ul {
+    font-size: 1.5em; /* Increase font size for the text */
+    color: var(--light-text-color); /* Default text color for light mode */
+    text-align: center; /* Center align the text */
+    margin: 0 auto; /* Center the text block */
+}
+
+body.dark-mode .contact-info p,
+body.dark-mode .contact-info ul {
+    color: var(--dark-text-color); /* Text color for dark mode */
+}
+
+.contact-info ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding from the list */
+}
+
+.contact-info li {
+    margin-bottom: 20px; /* Add some space between list items */
+    color: var(--light-text-color); /* Darker color for better contrast */
+}
+
+body.dark-mode .contact-info li {
+    color: var(--dark-text-color); /* Text color for dark mode */
+}
+
+.contact-link {
+    color: var(--light-text-color); /* Ensure links have the same dark color */
+    text-decoration: none; /* Remove the underline */
+}
+
+body.dark-mode .contact-link {
+    color: var(--dark-text-color); /* Ensure links have the same dark color in dark mode */
+}
+
+.contact-link:hover {
+    text-decoration: underline; /* Optional: underline on hover for better UX */
+}
