@@ -232,4 +232,8 @@ body.dark-mode .contact-link {
         width: 100%; /* Ensure anchor tags take full width */
         padding: 10px 0; /* Adjust padding */
     }
+
+    .container ul {
+        padding-left: 20px; /* Increase space from the left for the list items */
+    }
 }
