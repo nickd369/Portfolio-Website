@@ -18,18 +18,49 @@
         <button class="toggle" onclick="toggleMode()">Toggle Light/Dark Mode</button>
     </nav>
 
-    <div class="about-me-content">
-        <h1>About Me</h1>
-        <p>Hello! I'm Nicholas Dueñas, a 24-year-old enthusiast of many passions, born and raised in Miami, Florida.</p>
-        <p>Whether it's on the field, the court, or the screen, my love for sports knows no bounds. As a player and avid fan, I thrive on the excitement that sports bring into my life.</p>
-        <p>My fascination with technology has been a lifelong journey. From tinkering with gadgets to exploring the latest innovations, I am constantly in awe of how technology shapes our world. Alongside my tech enthusiasm, I have a creative side that finds expression through writing poems and playing music. While I'm still honing my guitar skills, music remains a soulful escape for me.</p>
-        <p>In the gaming world, I achieved the pinnacle of success as a Grand Champion in Rocket League, a testament to my dedication and competitive spirit.</p>
-        <p>Beyond the virtual arena, I find joy in cooking and experimenting with new recipes, turning everyday ingredients into delightful culinary creations.</p>
-        <p>Environmental sustainability is a cause close to my heart. I am a strong advocate for eco-friendly practices and believe in making choices that benefit our planet.</p>
-        <p>Community service and helping others are integral to who I am. I find fulfillment in teaching and empowering others, sharing knowledge, and fostering growth. My commitment to lifelong learning and personal growth drives me to continuously seek new knowledge and experiences.</p>
-        <p>Traveling is another passion of mine, with Hawaii being the furthest and most enchanting place I've visited, leaving me with unforgettable memories.</p>
-        <p>As a nature enthusiast, I'm always on the lookout for the next great trail to explore. The serenity and beauty of the outdoors provide a perfect backdrop for reflection and adventure.</p>
-        <p>Thank you for taking the time to get to know me. I look forward to connecting and sharing more of my journey with you.</p>
+    <div class="main-content">
+        <div class="about-me-content">
+            <h1>About Me</h1>
+            <p>Hello! I'm Nicholas Dueñas, a 24-year-old enthusiast of many passions, born and raised in Miami, Florida.</p>
+            <p>Whether it's on the field, the court, or the screen, my love for sports knows no bounds. As a player and avid fan, I thrive on the excitement that sports bring into my life.</p>
+            <p>My fascination with technology has been a lifelong journey. From tinkering with gadgets to exploring the latest innovations, I am constantly in awe of how technology shapes our world. Alongside my tech enthusiasm, I have a creative side that finds expression through writing poems and playing music. While I'm still honing my guitar skills, music remains a soulful escape for me.</p>
+            <p>In the gaming world, I achieved the pinnacle of success as a Grand Champion in Rocket League, a testament to my dedication and competitive spirit.</p>
+            <p>Beyond the virtual arena, I find joy in cooking and experimenting with new recipes, turning everyday ingredients into delightful culinary creations.</p>
+            <p>Environmental sustainability is a cause close to my heart. I am a strong advocate for eco-friendly practices and believe in making choices that benefit our planet.</p>
+            <p>Community service and helping others are integral to who I am. I find fulfillment in teaching and empowering others, sharing knowledge, and fostering growth. My commitment to lifelong learning and personal growth drives me to continuously seek new knowledge and experiences.</p>
+            <p>Traveling is another passion of mine, with Hawaii being the furthest and most enchanting place I've visited, leaving me with unforgettable memories.</p>
+            <p>As a nature enthusiast, I'm always on the lookout for the next great trail to explore. The serenity and beauty of the outdoors provide a perfect backdrop for reflection and adventure.</p>
+            <p>Thank you for taking the time to get to know me. I look forward to connecting and sharing more of my journey with you.</p>
+        </div>
+
+        <div class="media-content">
+            <div class="photos">
+                <img class="thumbnail" src="Photos/BabyMe.jpg" alt="Baby Nick">
+                <img class="thumbnail" src="Photos/Cooper.jpg" alt="Cooper">
+                <img class="thumbnail" src="Photos/Precious.jpg" alt="Baby Cat">
+                <img class="thumbnail" src="Photos/Rambo.jpg" alt="Tortoise">
+                <img class="thumbnail" src="Photos/DolphinsMountainHawaii.JPG" alt="Hawaiian dolphins and mountain">
+                <img class="thumbnail" src="Photos/WestPalmBeach.jpg" alt="Early morning sunrise">
+                <img class="thumbnail" src="Photos/LillyOrlando.jpg" alt="Lilypads">
+                <img class="thumbnail" src="Photos/Cooper2.jpg" alt="Cooper2">
+                <img class="thumbnail" src="Photos/MiamiDolphins.jpg" alt="Miami Dolphins field">
+            </div>
+            <div class="video">
+                <video controls>
+                    <source src="Photos/FreeThrow.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" src="">
+        </div>
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
     </div>
 
     <script src="./Scripts.js"></script>
