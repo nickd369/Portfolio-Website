@@ -142,15 +142,17 @@ body.dark-mode .navbar ul li a {
     box-sizing: border-box;
 }
 
-.contact-info {
-    max-width: 1000px;
-    width: 100%;
-    padding: 60px;
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-size: 1.2em;
-    color: var(--light-text-color);
-    font-weight: bold;
-    margin: 0 auto;
+    margin-top: 50px; /* Adjust as needed */
+}
+
+.contact-info {
+    max-width: 600px; /* Adjust as needed */
 }
 
 .contact-info h1 {

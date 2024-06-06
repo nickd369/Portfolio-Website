@@ -90,6 +90,8 @@ thumbnails.forEach((thumbnail, index) => {
             media.src = this.src;
             media.style.maxWidth = '90%'; // Adjust the maximum width as needed
             media.style.maxHeight = '90vh'; // Set maximum height to 90% of the viewport height
+            media.style.display = 'block';
+            media.style.margin = 'auto'; // Center the image horizontally
         } else if (this.tagName === 'VIDEO') {
             // If clicked thumbnail is a video
             media = createVideoElement(this.src);
@@ -127,6 +129,8 @@ function changeSlide(n) {
         media.src = thumbnails[currentIndex].src;
         media.style.maxWidth = '90%'; // Adjust the maximum width as needed
         media.style.maxHeight = '90vh'; // Set maximum height to 90% of the viewport height
+        media.style.display = 'block';
+        media.style.margin = 'auto'; // Center the image horizontally
     } else if (thumbnails[currentIndex].tagName === 'VIDEO') {
         // If current slide is a video
         media = createVideoElement(thumbnails[currentIndex].src);
