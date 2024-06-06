@@ -1,3 +1,4 @@
+// Function to toggle between light and dark mode
 function toggleMode() {
     const body = document.body;
     const navbar = document.querySelector('.navbar');
@@ -8,7 +9,6 @@ function toggleMode() {
         body.classList.add('light-mode');
         navbar.classList.remove('dark-mode');
         navbar.classList.add('light-mode');
-        // Restore light mode gradient
         document.documentElement.style.setProperty('--gradient', 'linear-gradient(45deg, #ff00ff, #00ffff, #ff00ff, #00ffff)');
         localStorage.setItem('mode', 'light-mode');
     } else {
@@ -16,12 +16,12 @@ function toggleMode() {
         navbar.classList.remove('light-mode');
         body.classList.add('dark-mode');
         navbar.classList.add('dark-mode');
-        // Set dark mode gradient
         document.documentElement.style.setProperty('--gradient', 'linear-gradient(45deg, #333333, #666666, #333333, #666666)');
         localStorage.setItem('mode', 'dark-mode');
     }
 }
 
+// Function to apply mode from local storage
 function applyMode(mode) {
     const body = document.body;
     const navbar = document.querySelector('.navbar');
@@ -50,29 +50,69 @@ if (!localStorage.getItem('mode')) {
     applyMode(storedMode);
 }
 
+// Lightbox functionality
 var lightbox = document.getElementById('lightbox');
-
-// Get the image and insert it inside the modal - use its "alt" text as a caption
-var lightboxImg = document.getElementById("lightbox-img");
+var lightboxContent = document.querySelector('.lightbox-content');
 var thumbnails = document.querySelectorAll('.thumbnail');
 var currentIndex = 0;
 
+// Function to create video element dynamically
+function createVideoElement(videoSrc) {
+    // Create video element
+    var video = document.createElement('video');
+    video.controls = true;
+    video.style.width = '100%';
+    video.style.height = 'auto';
+    video.style.display = 'block';
+    video.style.margin = '20px auto';
+
+    // Create source element
+    var source = document.createElement('source');
+    source.src = videoSrc;
+    source.type = 'video/mp4';
+
+    // Append source to video
+    video.appendChild(source);
+
+    // Return video element
+    return video;
+}
+
+// Event listener for thumbnails
 thumbnails.forEach((thumbnail, index) => {
     thumbnail.onclick = function() {
-        lightbox.style.display = "block";
-        lightboxImg.src = this.src;
+        lightbox.style.display = 'block';
         currentIndex = index;
+        var media;
+        if (this.tagName === 'IMG') {
+            // If clicked thumbnail is an image
+            media = document.createElement('img');
+            media.src = this.src;
+            media.style.maxWidth = '90%'; // Adjust the maximum width as needed
+            media.style.maxHeight = '90vh'; // Set maximum height to 90% of the viewport height
+        } else if (this.tagName === 'VIDEO') {
+            // If clicked thumbnail is a video
+            media = createVideoElement(this.src);
+        }
+        lightboxContent.innerHTML = ''; // Clear previous content
+        lightboxContent.appendChild(media);
     }
 });
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on <span> (x), close the modal
+// Close lightbox when clicking on close button
+var span = document.getElementsByClassName('close')[0];
 span.onclick = function() {
-    lightbox.style.display = "none";
-}
+    lightbox.style.display = 'none';
+};
 
+// Close lightbox when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == lightbox) {
+        lightbox.style.display = 'none';
+    }
+};
+
+// Function to change slides in the lightbox
 function changeSlide(n) {
     currentIndex += n;
     if (currentIndex < 0) {
@@ -80,12 +120,17 @@ function changeSlide(n) {
     } else if (currentIndex >= thumbnails.length) {
         currentIndex = 0;
     }
-    lightboxImg.src = thumbnails[currentIndex].src;
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == lightbox) {
-        lightbox.style.display = "none";
+    var media;
+    if (thumbnails[currentIndex].tagName === 'IMG') {
+        // If current slide is an image
+        media = document.createElement('img');
+        media.src = thumbnails[currentIndex].src;
+        media.style.maxWidth = '90%'; // Adjust the maximum width as needed
+        media.style.maxHeight = '90vh'; // Set maximum height to 90% of the viewport height
+    } else if (thumbnails[currentIndex].tagName === 'VIDEO') {
+        // If current slide is a video
+        media = createVideoElement(thumbnails[currentIndex].src);
     }
+    lightboxContent.innerHTML = ''; // Clear previous content
+    lightboxContent.appendChild(media);
 }
