@@ -159,7 +159,7 @@ body.dark-mode .navbar ul li a {
 }
 
 .header-box {
-    background-color:hsla(302, 92%, 54%, 0.815);
+    background-color:#F854CA;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -176,7 +176,7 @@ body.dark-mode .navbar ul li a {
 }
 
 body.dark-mode .header-box {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #212226;
 }
 
 .contact-container {
