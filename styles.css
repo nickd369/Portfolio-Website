@@ -142,6 +142,43 @@ body.dark-mode .navbar ul li a {
     box-sizing: border-box;
 }
 
+.headshot-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #fff;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.headshot-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-box {
+    background-color:hsla(302, 92%, 54%, 0.815);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.header-box h1 {
+    margin: 0;
+    color: var(--light-text-color);
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+body.dark-mode .header-box {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .contact-container {
     display: flex;
     flex-direction: column;
@@ -332,6 +369,19 @@ video {
     @media (max-width: 768px) {
         .main-content {
             flex-direction: column;
+        }
+
+        .header-box {
+            padding: 10px;
+        }
+
+        .headshot-circle {
+            width: 100px;
+            height: 100px;
+        }
+
+        p, h2, ul {
+            font-size: 1.2rem;
         }
 
         .about-me-content,
