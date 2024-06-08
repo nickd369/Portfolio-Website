@@ -84,7 +84,11 @@ thumbnails.forEach((thumbnail, index) => {
         lightbox.style.display = 'block';
         currentIndex = index;
         var media;
-        if (this.tagName === 'IMG') {
+        var videoSrc = this.getAttribute('data-video');
+        if (videoSrc) {
+            // If clicked thumbnail is a video
+            media = createVideoElement(videoSrc);
+        } else {
             // If clicked thumbnail is an image
             media = document.createElement('img');
             media.src = this.src;
@@ -92,9 +96,6 @@ thumbnails.forEach((thumbnail, index) => {
             media.style.maxHeight = '90vh'; // Set maximum height to 90% of the viewport height
             media.style.display = 'block';
             media.style.margin = 'auto'; // Center the image horizontally
-        } else if (this.tagName === 'VIDEO') {
-            // If clicked thumbnail is a video
-            media = createVideoElement(this.src);
         }
         lightboxContent.innerHTML = ''; // Clear previous content
         lightboxContent.appendChild(media);
@@ -123,7 +124,11 @@ function changeSlide(n) {
         currentIndex = 0;
     }
     var media;
-    if (thumbnails[currentIndex].tagName === 'IMG') {
+    var videoSrc = thumbnails[currentIndex].getAttribute('data-video');
+    if (videoSrc) {
+        // If current slide is a video
+        media = createVideoElement(videoSrc);
+    } else {
         // If current slide is an image
         media = document.createElement('img');
         media.src = thumbnails[currentIndex].src;
@@ -131,9 +136,6 @@ function changeSlide(n) {
         media.style.maxHeight = '90vh'; // Set maximum height to 90% of the viewport height
         media.style.display = 'block';
         media.style.margin = 'auto'; // Center the image horizontally
-    } else if (thumbnails[currentIndex].tagName === 'VIDEO') {
-        // If current slide is a video
-        media = createVideoElement(thumbnails[currentIndex].src);
     }
     lightboxContent.innerHTML = ''; // Clear previous content
     lightboxContent.appendChild(media);
